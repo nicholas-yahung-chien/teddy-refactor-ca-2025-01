@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.codurance.training</groupId>
+    <artifactId>tasks</artifactId>
+    <version>0.1</version>
+
+    <name>Task List</name>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.jar.plugin.version>3.3.0</maven.jar.plugin.version>
+        <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
+        <junit.jupiter.engine.version>5.10.2</junit.jupiter.engine.version>
+        <junit.jupiter.api.version>5.10.2</junit.jupiter.api.version>
+        <junit-platform-suite-engine.version>1.9.2</junit-platform-suite-engine.version>
+        <junit-platform-suite-api.version>1.9.2</junit-platform-suite-api.version>
+        <maven.javadoc.plugin.version>3.4.1</maven.javadoc.plugin.version>
+        <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+        <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
+        <nexus.staging.maven.plugin.version>1.6.13</nexus.staging.maven.plugin.version>
+        <jackson.version>2.14.2</jackson.version>
+        <revision>0.0.2-beta</revision>
+        <ezspec.version>2.0.1</ezspec.version>
+        <ezddd.version>1.0.11</ezddd.version>
+        <ucontract.version>1.0.1</ucontract.version>
+        <ezspec.version>2.0.2</ezspec.version>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>appassembler-maven-plugin</artifactId>
+                <version>1.8</version>
+                <configuration>
+                    <programs>
+                        <program>
+                            <id>task-list</id>
+                            <mainClass>com.codurance.training.tasks.todolist.io.TaskApplication</mainClass>
+                        </program>
+                    </programs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.engine.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.engine.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.engine.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite-engine</artifactId>
+            <version>${junit-platform-suite-engine.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>java-hamcrest</artifactId>
+            <version>2.0.0.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>7.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tw.teddysoft.ezddd</groupId>
+            <artifactId>ezddd-core</artifactId>
+            <version>${ezddd.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tw.teddysoft.ezddd</groupId>
+            <artifactId>ezcqrs</artifactId>
+            <version>${ezddd.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tw.teddysoft.ucontract</groupId>
+            <artifactId>uContract</artifactId>
+            <version>${ucontract.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tw.teddysoft.ezspec</groupId>
+            <artifactId>ezspec-core</artifactId>
+            <version>LATEST</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tw.teddysoft.ezspec</groupId>
+            <artifactId>ezspec-report</artifactId>
+            <version>LATEST</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
